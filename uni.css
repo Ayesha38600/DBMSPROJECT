@@ -1,0 +1,587 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Baloo Tamma 2', cursive;
+}
+.header{
+    min-height: 100vh;
+    width: 100%;
+   background-image:linear-gradient(rgba(44, 46, 56, 0.7),rgba(24, 32, 61, 0.7)),url(images//banner.png);
+    background-position: center;
+    background-size: cover;
+    position: relative;
+    /* background-image: url("images//banner.png"); */
+    /* opacity: 0.7; */
+}
+/* CSS FOR NAV LOGO & MENU */
+nav{
+    display: flex;
+    padding: 2% 5%;
+    justify-content: space-between;
+    align-items: center;
+}
+nav img{
+    width: 150px;
+}
+/* menu */
+.nav-links{
+    /* flex 1 meANS IT  WILL OCCUPY ALL THE SPACE IN THE ROW  */
+flex: 1;
+text-align: right;
+}
+.nav-links ul li{
+    list-style: none;
+    /* display: inline-block; so it will come horizontally  */
+    display: inline-block;
+    padding: 8px 12px;
+    position: relative;
+}
+.nav-links ul li a{
+    text-decoration: none;
+    color: rgb(250, 251, 252);
+    font-size: 15px;
+    font-weight: bold;
+    
+}
+
+/* ye menu bar k nichy line aany k lia jab hover ho tb ay gy line before hover line ki width= 0% di h aur display block ni krngy to line ay gy hi ni aur jab hover kry tb line ajy isliye width 100% krdi hy after hover ajy gy */
+.nav-links ul li::after{
+    content: "";
+    width: 0%;
+    height: 2px;
+    background: rgb(252, 137, 6);
+    display: block;
+    margin: auto;
+    transition: .5s;
+}
+.nav-links ul li:hover::after{
+    width: 100%;
+
+}
+/* <!-- ye yhn heading button wagera  --> */
+.text-box{
+width: 90%;
+color: rgb(0, 0, 0);
+position: absolute;
+top: 50%;
+left: 50%;
+/* transform: translate(-50%,-50%); so it will be in the center of the div  */
+transform: translate(-50%,-50%);
+text-align: center;
+}
+.text-box h1{
+    font-size: 60px;
+    color: white;
+}
+.text-box p{
+    /* 10px from top 0 from left & right  , 40px from bottom  */
+    margin: 10px 0 40px;
+    font-size: 14px;
+    color: rgb(255, 245, 245);
+    font-weight: bold;
+
+}
+.hero-btn{
+    display: inline-block;
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+    border: 1px solid rgb(255, 255, 255);
+    padding: 12px 20px;
+    font-size: 15px;
+    background: transparent;
+    position: relative;
+    cursor: pointer;
+
+}
+.hero-btn:hover{
+    border: 1px solid orangered;
+    background-color: orangered;
+}
+/* for icon */
+nav .fa{
+    display: none;
+}
+
+/* for responsive web we add mediaquiry */
+@media(max-width:700px){
+    .text-box h1{
+        font-size: 30px;
+      
+    }
+    /* for menu bar */
+    .nav-links ul li{
+        /* display:  block ; sy menu bar ek vertical line mai ajy ga responsive bny mai  */
+        display: block;
+    }
+    .nav-links{
+        position: absolute;
+        background: orangered;
+        height: 100vh;
+        width: 200px;
+        top: 0;
+        /* right:-200px; krny sy jb web responsive hogy tb menu hat jy ga aur 3 lines waly icon py click krngy tbhi khuly ga aur click icon bnany k like html mai thori si javascript add krni hogy  */
+        right:-200px;
+        text-align: left;
+        z-index: 2;
+        /* nichy wali transition:  sy ye benefit hoga k jb web responsive hogy to menu 3 dost py  click krny k bad smoothly open hoga ; */
+        transition: 1s;
+    }
+    nav .fa{
+        display: block;
+        color: rgb(255, 253, 253);
+        margin: 10px;
+        font-size: 22px;
+        cursor: pointer;
+    }
+    .nav-links ul{
+        padding: 30px;
+    }
+
+}
+/* dr */
+.hero{
+    background: rgb(245, 235, 244);;
+    width: 100%;
+    min-height: 100vh;
+    padding-left: 10%;
+    padding-right: 10%;
+    padding-top: 80px;
+    box-sizing: border-box;
+    text-align: center;
+    color: white;
+   
+}
+.hero h1{
+    font-size: 40px;
+    font-weight: bold;
+    color: black;
+    
+}
+.row{
+    margin-top: 80px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    
+}
+
+.col{
+    flex-basis: 28%;
+    box-sizing: border-box;
+    text-align: center;
+    position: relative;
+    cursor: pointer;
+    min-height: 230px;
+    margin-bottom: 20px;
+    z-index: 2;
+}
+
+.profile{
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    background: rgb(189, 186, 186);
+    padding: 12px;
+    transition: 0.5s;
+}
+.profile img{
+    width: 100%;
+}
+.profile:hover{
+    color: rgb(0, 17, 255);
+    transition: 0.5s;
+}
+.profile h2{
+    margin: 25px 0 10px;
+    font-weight: 500px;
+
+}
+.profile p{
+    margin-bottom: 10px;
+    color:#000000;
+}
+.col::before, .col::after{
+    content: '';
+    /* height: 100px;
+    width: 100px; */
+    height: 0;
+    width: 0;
+    background: linear-gradient(135deg,#ff001d,#ddfa00);
+    position: absolute;
+    z-index: -1;
+    animation: none;
+}
+.col::before{
+    left: 0;
+    top: -8px;
+
+}
+.col::after{
+    right: 0;
+    bottom: -8px;
+
+}
+@keyframes stroke{
+    0%{
+        height: 8px;
+        width: 0;
+    }
+    50%{
+        height: 8px;
+        width:calc(100% + 8px);
+    }
+    100%{
+        height: calc(100% + 16px);
+        width:calc(100% + 8px);
+    }
+}
+.col:hover::before , col:hover::after{
+    animation: stroke s linear;
+    animation-fill-mode: forwards;
+}
+
+/* ......................course.....................  */
+.course{
+    width: 80%;
+    margin: auto;
+    text-align: center;
+    padding-top: 100px;
+}
+h1{
+    font-size: 36px ;
+    font-weight: 600;
+}
+p{
+    color: black;
+    font-size: 14px ;
+    font-weight: 300;
+    line-height: 22px;
+    padding: 10px;
+}
+.row{
+    margin-top: 5%;
+    display: flex;
+    justify-content: space-between;
+}
+.course-col{
+    flex-basis: 31%;
+    background-color: rgb(245, 235, 244);
+    border-radius: 10px;
+    margin-bottom: 5%;
+    padding: 10px 20px ;
+    box-sizing: border-box;
+    transition: 0.5s;
+}
+
+
+h3{
+    text-align: center;
+    font-weight: 600;
+    margin: 10px 0;
+}
+.course-col:hover{
+    box-shadow: 0 0 20px 0 rgb(122, 115, 115);
+}
+/* media quiry for course waly page ki  */
+@media (max-width: 700px){
+    .row{
+        flex-direction: column;
+    }
+}
+
+
+/* llllllllllllllllllllllllllllllllllllllllll */
+
+
+/* lllllllllllllllllllllllllllllllllllllllllll */
+ /* ...................................campus....................  */
+ .campus{
+    width: 80%;
+    margin: auto;
+    text-align: center;
+    padding-top: 50px;
+ 
+ }
+ .campus-col{
+    flex-basis: 32%;
+    border-radius: 10px;
+    margin-bottom: 30px;
+    position: relative;
+    overflow: hidden;
+ 
+ }
+ .campus-col img{
+    width: 100%;
+    display: block;
+    /* display: block sy img k corner round hojany ; */
+  
+   
+}
+/* LONDON PIC MAI LAYER ADD KI H AUR HOVER HONY K BAD AY GY LAYER RED COLOR KI OTHERWISE TRANSPARENT */
+.layer{
+
+    background:transparent;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: 0.5s;
+}
+.layer:hover{
+        /* 0.7 IS OPACITY */
+    background-color:  rgba(212, 25, 25, 0.829);
+}
+/* layer mai jo heading h3 hy usko bottom py ly ay aur opacty 0 krdi ta k srf hover hony py hi 1 ki hy opacity */
+.layer h3{
+    width: 100%;
+    font-weight: 500;
+    color: white;
+    font-size: 25px;
+    /* bottom 0 isliye dia hy ta k h3 nichy ajy  */
+    bottom: 0;
+    left: 50%;
+    /* so it will be at the bottom & center from the x axis  */
+    transform: translateX(-50%);
+    position: absolute;
+    opacity: 0;
+    transition: 0.5s;
+}
+.layer:hover h3{
+     /* bottom 49 isliye dia hy ta k h3 center mai  ajy hover hony py  */
+    bottom: 49%;
+    opacity: 1;
+}
+
+/* campus sec already responsive hy so koi media quiry add ki need ni  */
+
+
+/* ......................................... */
+.heer{
+    background: rgb(240, 240, 185);
+    height: 100vh;
+    width: 100%;
+    position: relative;
+    
+}
+.heer h1{
+    text-align: center;
+    padding-top: 20px;
+    font-size: 30px;
+    
+    color: rgb(0, 0, 0);
+}
+.slide_row{
+    display: flex;
+    width: 3200px;
+    transition: 0.5s;
+}
+.slide_col{
+    width: 800px;
+    height: 400px;
+    position: relative;
+}
+.user_img{
+position: absolute;
+top: 0;
+right: 0;
+height: 100%;
+
+}
+.user_img img{
+    height: 100%;
+    border-radius: 10px;
+}
+.user_img:hover{
+    size: 200px;
+}
+
+.user_text{
+    background: rgb(2, 1, 1);
+    width: 520px;
+    height: 270px;
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    border-radius: 10px;
+    color: rgb(255, 255, 255);
+    padding: 45px;
+    box-sizing: border-box;
+    z-index: 2;
+}
+.user_text p{
+    font-size: 18px;
+    line-height: 24px;
+    color: rgb(255, 255, 255);
+}
+.user_text p:hover{
+    color: #ddfa00;
+}
+.user_text h3{
+    margin: 35px 0 5px;
+    color: aquamarine;
+}
+.container{
+    width: 800px;
+    height: 400px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+.indicator{
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: -50px;
+
+}
+.btn{
+    display: inline-block;
+    height: 15px;
+    width: 15px;
+    margin: 4px;
+    border-radius: 15px;
+    background: rgb(255, 0, 43);
+    cursor: pointer;
+    transition: 0.5s;
+}
+.active{
+    width: 45px;
+
+
+}
+.test{
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+/* ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; */
+
+
+/* ..........................facilities..........................  */
+.facilities{
+    width: 80%;
+    margin: auto;
+    text-align: center;
+    padding-top: 100px;
+}
+.facilities-col{
+    flex-basis: 31%;
+    border-radius: 10px;
+    margin-bottom: 5%;
+    text-align: left;
+}
+.facilities-col img{
+    width: 100%;
+    border-radius: 10px;
+}
+.facilities-col p{
+    padding: 0;
+
+}
+.facilities-col h3{
+    margin-top: 15px;
+    margin-bottom: 15px;
+    text-align: left;
+}
+/* this sec is also responsive  */
+
+/* .........................testimonials.................. */
+.testimonials{
+    width: 80%;
+    margin: auto;
+    padding-top: 100px;
+    text-align: center;
+
+}
+.testimonial-col{
+    flex-basis: 44%;
+    border-radius: 10px;
+    margin-bottom: 5%;
+    text-align: left;
+    background:rgb(240, 234, 239) ;
+    padding: 25px;
+    display: flex;
+    cursor: pointer;
+}
+.testimonial-col img{
+    height: 40px;
+    margin-left: 5px;
+    margin-right: 30px;
+    border-radius: 50%;
+}
+.testimonial-col p{
+    padding: 0;
+
+}
+.testimonial-col h3{
+    margin-top: 15px;
+    text-align: left;
+}
+/* rating star icon k lia  */
+.testimonial-col .fa{
+    color: red;
+
+}
+@media (max-width:700px){
+    .testimonial-col img{
+    
+        margin-left: 0px;
+        margin-right: 15px;
+      
+    }
+}
+/* .......................call to action ......................  */
+.cta{
+    margin: 100px auto;
+    width: 80%;
+    background-image: linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.7)),url(images//banner2.jpg);
+    background-position: center;
+    background-size: cover;
+    border-radius: 10px;
+    text-align: center;
+    padding: 100px 0;
+}
+.ctaa{
+    margin: 100px auto;
+    width: 80%;
+    background-image: linear-gradient(rgba(221, 176, 176, 0.7),rgba(247, 239, 239, 0.7)),url(images//STUDENT.jpg);
+    background-position: center;
+    background-size: cover;
+    border-radius: 10px;
+    text-align: center;
+    padding: 100px 0;
+}
+.cta h1{
+    color: white;
+    margin-bottom: 40px;
+    padding: 0;
+}
+@media(max-width:700px){
+    .cta h1{
+        font-size: 25px;
+    }
+}
+/* ......................footer......................  */
+.footer{
+    width: 100%;
+    text-align: center;
+    padding: 30px 0;
+}
+.footer h4{
+    margin-bottom: 25px;
+    margin-top: 20px;
+    font-weight: 600;
+}
+.icons{
+    color: red;
+    margin: 0 13px;
+    cursor: pointer;
+    padding: 18px 0;
+
+}
+.fa-heart-o{
+    color: red;
+}

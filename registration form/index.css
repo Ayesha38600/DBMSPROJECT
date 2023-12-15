@@ -1,0 +1,54 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Playfair Display', serif;
+}
+body{
+    background: url(laptop.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    color: black;
+}
+.regform{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+.regform h1{
+    font-size: 40px;
+    text-align: center;
+    text-transform: uppercase;
+    
+}
+.regform p{
+    font-size: 20px;
+    margin: 15px 0;
+
+}
+.regform input{
+    font-size: 15px;
+    padding: 10px 40px;
+    width: 100%;
+    border-radius: 5px;
+    outline: none;
+}
+.regform button{
+    font-size: 18px;
+    font-weight: bold;
+    margin: 20px 0px;
+    padding: 10px 15px;
+    width: 50%;
+    border: 0;
+    border-radius: 5px;
+    background-color: rgb(0, 0, 0);
+    color: white;
+
+    
+}
+.regform button:hover{
+    color: rgb(0, 0, 0);
+   background-color: beige;
+}

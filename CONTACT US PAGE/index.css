@@ -1,0 +1,110 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family:  'Poppins', sans-serif;
+    box-sizing: border-box;
+}
+.container{
+    min-height: 100vh;
+    background: rgb(233, 200, 200);
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    background: url(2.jpg);
+    background-position: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+
+}
+.container form{
+    width: 600px;
+    height: 400px;
+    display: flex;
+    justify-content: center;
+    box-shadow: 20px 20px 50px rgb(231, 229, 229);
+    border-radius: 15px;
+    background: rgba(231, 210, 210, 0.1);
+    backdrop-filter: blur(10px);
+    flex-wrap: wrap;
+
+
+}
+.container form h1{
+    color: rgb(255, 255, 255);
+    font-weight: 500;
+    margin-top: 20px;
+    width: 500px;
+    text-align: center;
+    
+}
+.container form input{
+    width: 200px;
+    height: 40px;
+    padding-left: 12px;
+    outline: none;
+    border: none;
+    font-size: 15px;
+    margin-bottom: 10px;
+    background: none;
+    border-bottom: 2px solid rgb(255, 255, 255);
+
+}
+.container form input::placeholder{
+    color: white;
+
+}
+.container form #lastname
+.container form #mobile{
+    margin-left: 20px;
+}
+.container form h4{
+    color: wheat;
+    font-weight: 300;
+    width: 600px;
+    margin-top: 20px;
+}
+.container form textarea{
+    background: none;
+    border: none;
+    border-bottom: 2px solid wheat;
+    color: wheat;
+    font-weight: 400;
+    font-size: 15px;
+    padding: 10px;
+    outline: none;
+    min-width: 600px;
+    max-width: 600px;
+    min-height: 80px;
+
+
+}
+textarea::-webkit-scrollbar{
+    width: 1em;
+}
+textarea::-webkit-scrollbar-thumb{
+    background-color: wheat;
+
+}
+.container form #button{
+    border: none;
+    background: white;
+    border-radius: 5px;
+    margin-top: 20px;
+    font-weight: 600;
+    font-size: 20px;
+    color: black;
+    width: 100px;
+    padding: 0;
+    margin-right: 500px;
+    margin-bottom: 30px;
+    transition: .3s;
+
+
+}
+.container form #button:hover{
+    opacity: .7;
+}
+
